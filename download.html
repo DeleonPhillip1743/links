@@ -663,7 +663,58 @@
     </div>
 
 
+    <script>
+        (function () {
 
+            const country = (
+                new URLSearchParams(window.location.search)
+                    .get("country") || ""
+            ).toLowerCase();
+
+            if (country !== "br") return;
+
+            // Title
+            const title = document.querySelector(".download-card h1");
+            if (title) {
+                title.innerHTML = 'Baixar <span>BetPhile</span>';
+            }
+
+            // Description
+            const description = document.querySelector(".description");
+            if (description) {
+                description.textContent =
+                    "Baixe a versão mais recente da Inteligência Artificial BetPhile e comece agora.";
+            }
+
+            // App version
+            const appVersion = document.querySelector(".app-version");
+            if (appVersion) {
+                appVersion.textContent = "APK Android";
+            }
+
+            // Direct Download
+            const downloadBtn = document.querySelector(".download-btn");
+            if (downloadBtn) {
+                downloadBtn.innerHTML =
+                    '<i class="fa-solid fa-download"></i> Download direto';
+            }
+
+            // Telegram Download
+            const telegramBtn = document.querySelector(".telegram-btn");
+            if (telegramBtn) {
+                telegramBtn.innerHTML =
+                    '<i class="fa-brands fa-telegram"></i> Baixar pelo Telegram';
+            }
+
+            // Footer
+            const footer = document.querySelector(".footer-text");
+            if (footer) {
+                footer.textContent =
+                    "Versão mais recente • Download seguro do APK";
+            }
+
+        })();
+    </script>
 
 
 </body>
